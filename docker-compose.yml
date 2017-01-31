@@ -1,0 +1,11 @@
+version: '2'
+services:
+  bot:
+    image: aj-may/docker-bot
+    build: .
+    env_file: .env
+    volumes:
+      - ./dist:/app/dist
+    ports:
+      - 80
+    command: npm run start-dev
